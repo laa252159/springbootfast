@@ -1,4 +1,4 @@
-package ch7.springbootfast;
+package com.springbootfast;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
