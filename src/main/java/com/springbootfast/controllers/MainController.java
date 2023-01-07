@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
-    @RequestMapping("/{color}")
+    @RequestMapping("/home/{color}")
     public String home(@PathVariable(required = false) String color,
                        @RequestParam(required = false, defaultValue = "Noname") String userName,
                        Model page) {
