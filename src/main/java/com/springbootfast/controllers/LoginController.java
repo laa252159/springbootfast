@@ -25,6 +25,9 @@ public class LoginController {
     public String loginPost(UserLogin userLogin, Model model) {
         boolean isLoggedIn = loginService.isLoggedIn(userLogin);
         String message = isLoggedIn ? "You are now logged in" : "Login failed";
+        if (isLoggedIn) {
+            return "redirect:/main";
+        }
         model.addAttribute("message", message);
         return "login.html";
     }

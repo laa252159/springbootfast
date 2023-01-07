@@ -1,12 +1,12 @@
 package com.springbootfast.service;
 
 import com.springbootfast.model.Product;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
 public class ProductService {
     private List<Product> products = new ArrayList<>();
 
