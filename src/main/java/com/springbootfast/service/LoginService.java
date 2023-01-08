@@ -9,12 +9,15 @@ import org.springframework.web.context.annotation.RequestScope;
 public class LoginService {
 
     private LoggedUserManagmentService loggedUserManagmentService;
+    private LoginCountService loginCountService;
 
-    public LoginService(LoggedUserManagmentService loggedUserManagmentService) {
+    public LoginService(LoggedUserManagmentService loggedUserManagmentService, LoginCountService loginCountService) {
         this.loggedUserManagmentService = loggedUserManagmentService;
+        this.loginCountService = loginCountService;
     }
 
     public boolean isLoggedIn(UserLogin userLogin) {
+        loginCountService.increment();
         boolean isLoggedIn = loggedUserManagmentService.getUserName() != null;
         if (isLoggedIn || "natali".equalsIgnoreCase(userLogin.getUserName()) && "password".equals(userLogin.getPassword())) {
             loggedUserManagmentService.setUserName("natali");

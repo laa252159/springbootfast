@@ -1,6 +1,7 @@
 package com.springbootfast.controllers;
 
 import com.springbootfast.service.LoggedUserManagmentService;
+import com.springbootfast.service.LoginCountService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +14,11 @@ import org.thymeleaf.util.StringUtils;
 public class MainController {
 
     private LoggedUserManagmentService loggedUserManagmentService;
+    private LoginCountService loginCountService;
 
-    public MainController(LoggedUserManagmentService loggedUserManagmentService) {
+    public MainController(LoggedUserManagmentService loggedUserManagmentService, LoginCountService loginCountService) {
         this.loggedUserManagmentService = loggedUserManagmentService;
+        this.loginCountService = loginCountService;
     }
 
     @RequestMapping("/home/{color}")
@@ -36,6 +39,7 @@ public class MainController {
         if (StringUtils.isEmpty(loggedUserManagmentService.getUserName())) {
             return "redirect:/";
         }
+        model.addAttribute("loginCount", loginCountService.getAttemptsCounter());
         model.addAttribute("userName", loggedUserManagmentService.getUserName());
         return "main.html";
     }
