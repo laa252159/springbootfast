@@ -1,0 +1,22 @@
+###
+POST /payment HTTP/1.1
+Host: localhost:8080
+requestId: 111
+Content-Type: application/json
+#Content-Length: 500
+
+{
+  "id": "",
+  "amount": 555
+}
+
+
+
+
+
+
+
+
+
+
+
