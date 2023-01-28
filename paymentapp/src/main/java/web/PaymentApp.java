@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class Main {
+public class PaymentApp {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+        SpringApplication.run(PaymentApp.class, args);
     }
 }
 @ComponentScan(basePackages = {"controllers", "model", "web"})
