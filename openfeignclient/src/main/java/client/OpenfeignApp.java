@@ -7,6 +7,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OpenfeignApp {
     public static void main(String[] args) {
         SpringApplication.run(OpenfeignApp.class, args);
-        System.out.println("Hello world!");
     }
 }
